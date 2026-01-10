@@ -312,7 +312,7 @@
           <div class="col-lg-6">
             <form onsubmit="sendEmail(event)" class="php-email-form">
               <h2>Contact Us</h2>
-
+              <div class="row gy-4">
               <div class="col-md-6">
                 <input
                   type="text"
@@ -340,7 +340,15 @@
               ></textarea>
 
                               </div>
-              <button type="submit">Send Message</button>
+              <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
             </form>
 
           </div>
@@ -465,6 +473,7 @@
 </body>
 
 </html>
+
 
 
 
