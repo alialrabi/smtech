@@ -312,28 +312,34 @@
           <div class="col-lg-6">
             <form onsubmit="sendEmail(event)" class="php-email-form">
               <h2>Contact Us</h2>
-          
-              <input
-                type="text"
-                name="from_name"
-                placeholder="Your Name"
-                required
-              />
-          
-              <input
+
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  name="from_name"
+                  placeholder="Your Name"
+                  required
+                />  
+              </div>
+              
+                          <div class="col-md-6 ">
+                                          <input
                 type="email"
                 name="reply_to"
                 placeholder="Your Email"
                 required
               />
-          
-              <textarea
+
+                          </div>          
+                              <div class="col-md-12">
+                                            <textarea
                 name="message"
                 placeholder="Your Message"
                 rows="5"
                 required
               ></textarea>
-          
+
+                              </div>
               <button type="submit">Send Message</button>
             </form>
 
@@ -459,6 +465,7 @@
 </body>
 
 </html>
+
 
 
 
