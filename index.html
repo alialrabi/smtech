@@ -447,9 +447,29 @@
 
   gtag('config', 'G-0XYE58F6T5');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('G2UgiOBywLgKYxKgj');
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_01mxvj5', 'template_wmpwu2m', e.target)
+      .then(() => alert('Email sent!'))
+      .catch(err => console.error(err));
+  }
+</script>
+
+<form onsubmit="sendEmail(event)">
+  <input type="text" name="from_name" placeholder="Name" required />
+  <input type="email" name="reply_to" placeholder="Email" required />
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Send</button>
+</form>
+  
 </body>
 
 </html>
+
 
 
 
