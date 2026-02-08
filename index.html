@@ -132,13 +132,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 8%;
+    padding: 60px 0px;
     background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
     color: white;
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 1290px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -201,7 +201,7 @@
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
+@media (max-width: 1250px) {
 
     .hero-container {
         grid-template-columns: 1fr;
@@ -353,8 +353,8 @@
     .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
-            padding: 1.8rem;
+            gap: 1rem;
+            padding: 1.2rem;
             background: var(--bg-light);
             border-radius: 16px;
             transition: all 0.3s ease;
@@ -454,7 +454,7 @@
 
     /* Services Section */
 .services {
-  padding: 80px 10%;
+  padding: 80px auto;
   background: white; /* Add this to ensure white background */
 }
 
@@ -467,7 +467,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 25px;
 }
 
@@ -476,6 +476,7 @@
   position: relative;
   height: 200px;
   border-radius: 18px;
+  width: 410px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -568,7 +569,7 @@
     }
 
     .contact-container {
-            max-width: 1200px;
+            max-width: 1290px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -584,7 +585,7 @@
 
     .contact-info {
       display: grid;
-      gap: 1.5rem;
+      gap: 1.2rem;
     }
 
     .info-card {
@@ -612,7 +613,7 @@
 
     .contact-info h3 {
             font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.1rem;
             color: var(--text-dark);
         }
 
@@ -627,7 +628,7 @@
             color: var(--text-gray);
             margin-bottom: 3rem;
             font-size: 1.1rem;
-            line-height: 1.8;
+            line-height: 1.2;
         }
 
     .info-text h3 {
