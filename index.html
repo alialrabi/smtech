@@ -1,437 +1,1254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartInn Technology</title>
+  <meta name="description" content="Modern software solutions that help businesses grow">
+  <meta name="keywords" content="software development, web development, mobile apps, Egypt">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <title>SmartInn technology</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    :root {
+  /* Primary Vodafone Red */
+  --primary: #E60000;
+  --primary: #E1306C;
+  --primary-dark: #C13584;
+            --secondary: #405DE6;
+            --accent: #F77737;
+            --success: #00D4AA;
+            
+            /* Background colors */
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --bg-lighter: #F0F2F5;
+            
+            /* Text colors */
+            --text-dark: #1a1a1a;
+            --text-gray: #606770;
+            --text-light: #65676B;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #E1306C 0%, #F77737 100%);
+            --gradient-purple: linear-gradient(135deg, #405DE6 0%, #C13584 100%);
+            --gradient-warm: linear-gradient(135deg, #F77737 0%, #FCAF45 100%);
+}
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      height: 70px;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .cta-button {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 0px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    /* Hero Section */
+    .hero {
+    min-height: 90vh;
+    position: relative;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 8%;
+    background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
+    color: white;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* TEXT */
+
+.hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-text .gradient-text {
+          background: var(--gradient-primary);
+          -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+/* BUTTON */
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* IMAGE */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #B30000;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      height: 55px;
+      gap: 0.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      height: 60px;
+      background: white;
+      color: #B30000;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 0px solid var(--primary);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 2rem;
+      margin: 0 auto;
+    }
+
+    .values {
+      background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .section-header .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+
+    .about-text h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .about-text span {
+      font-size: 2.5rem;
+      color: black;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: black;
+      color: var(--gradient-primary);
+
+    }
+
+    .about-text p {
+      color: var(--text-gray);
+      line-height: 1.8;
+      font-size: 1.125rem;
+    }
+
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+    .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.8rem;
+            background: var(--bg-light);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item:nth-child(2) .contact-item-icon {
+            background: var(--gradient-purple);
+        }
+
+        .contact-item:nth-child(3) .contact-item-icon {
+            background: var(--gradient-warm);
+        }
+
+        .contact-item:nth-child(4) .contact-item-icon {
+            background: linear-gradient(135deg, #00D4AA 0%, #0099CC 100%);
+        }
+
+        .contact-item-text h4 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item-text p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+
+
+    /* Values/Services Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .value-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      border: 1px solid #f1f5f9;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .value-card p {
+      color: var(--text-gray);
+      line-height: 1.8;
+    }
+
+    /* Services Section */
+.services {
+  padding: 80px 10%;
+  background: white; /* Add this to ensure white background */
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Service Box */
+.service-box {
+  position: relative;
+  height: 200px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.3));
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.service-overlay h3 {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.service-box:hover img {
+  transform: scale(1.1);
+}
+
+@media(max-width: 600px) {
+  .service-box {
+    height: 170px;
+  }
+  
+  .service-overlay h3 {
+    font-size: 20px;
+  }
+}
+
+    /* Clients Section */
+    .clients-section {
+      background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
+      padding: 80px 2rem;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .client-logo {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      height: 120px;
+    }
+
+    .client-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .client-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .client-logo:hover img {
+      filter: grayscale(0%);
+    }
+
+    .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+    /* Contact Section */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+      font-size: 1.25rem;
+    }
+
+    .contact-info h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-info .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+    .info-text h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .info-text p {
+      color: var(--text-gray);
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: white;
+      padding: 60px 2rem 20px;
+    }
+
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      background-color: #000;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #B30000;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--dark-light);
+      color: #94a3b8;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+      font-size: 1.5rem;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero-content,
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+
+    .section-tag {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-header .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+    /* Loading and message states */
+    .loading, .error-message, .sent-message {
+      display: none;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .loading {
+      background: #dbeafe;
+      color: var(--primary);
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .sent-message {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .wave {
+      position: relative;
+      animation-timing-function: linear;
+      animation-name: myAnimation;
+      animation-duration: .9s;
+      animation-fill-mode: forwards;
+    }
+
+/* Wave animation */
+@keyframes myAnimation {
+  from {left: -50px;
+  opacity: .5;
+  }
+  to {left: 0px;
+    opacity: 1;
+  }
+}
+
+.welcome-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  color: white;
+  padding: 40px;
+}
+
+.welcome-content {
+  text-align: center;
+  max-width: 700px;
+}
+
+/* Hidden state */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Show state */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+  </style>
 </head>
-
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <!-- Header -->
+  <header>
+    <nav>
+      <a class="logo">SmartInn</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" class="cta-button" style="color: white; font-weight: 600;">Get Started</a></li>
+      </ul>
+      <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span>SmartInn</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#clients">Clients</a></li>         
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">We build modern software solutions that help businesses grow.</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">We are a software development company focused on designing, building, and delivering scalable digital products aligned with your business goals.
-</h2>
-          <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Get Started</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
+  <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+  
+          <!-- TEXT -->
+          <div class="hero-text">
+              <div class="hero-text wave">
+                <h1>Transform Your Business with <span class="gradient-text">Smart Technology</span></h1>
+                <p>We are a software development company focused on designing, building, and delivering scalable digital products aligned with your business goals.</p>
             </div>
+  
+              <a href="#about" class="btn-primary wave">Get Started →</a>
+              <a href="#services" class="btn-secondary wave">Our Services</a>
+      
+  
           </div>
-        </div>
-        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/head2.png" class="img-fluid" alt="">
-        </div>
+  
+          <!-- IMAGE -->
+          <div class="hero-image wave">
+  
+              <!-- Replace src with your image path -->
+              <img src="assets/img/smart.jpg" alt="Team Working">
+  
+          </div>
+  
+      </div>  
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-content hidden">
+      <div class="about-text">
+        <h3>Who We Are</h3>
+        <h1><span class="gradient-text">SmartInn is a software development company based in Egypt.</span></h1>
+        <p>That provides high quality IT services such as IT consulting, Web development and Business Applications at effective cost around the world. SmartInn offers you dedicated services at all stages of the project. We strongly believe in increasing our clients business output through the application of the latest technical tools in most effective and creative ways.</p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/smart2.jpg" alt="Team Working">
       </div>
     </div>
+  </section>
 
-  </section><!-- End Hero -->
+  <!-- Values Section -->
+  <section id="values"  class="values hidden">
+    <div class="section-header">
+      <h2>Our <span class="highlight">Values</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>Through open-source software, our web applications are customized for the unique requirements of businesses.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💻</div>
+        <h3>Software Development</h3>
+        <p>We focus on the business problem and deliver the solution which not only serves business needs but helps it to grow rapidly.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📱</div>
+        <h3>Mobile App Development</h3>
+        <p>We build high-quality apps across native, web or hybrid platforms. Our apps are aimed at solving your business problems.</p>
+      </div>
+    </div>
+  </section>
 
-  <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+  <!-- Services Section -->
+  <section id="services" class="services hidden">
 
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-              <h3>Who We Are</h3>
-              <h2>SmartInn is a software development company based in Egypt.</h2>
-              <p>
-                That provides high quality IT services such as IT consulting, Web development and Business Applications at effective cost around the world. SmartInn offers you dedicated services at all stages of the project. We strongly believe in increasing our clients business output through the application of the latest technical tools in most effective and creative ways.
-              </p>
-            
+    <div class="section-header">
+      <span class="section-tag">What We Offer</span>
+      <h2>Our <span class="highlight">Premium Services</span></h2>
+      <p>Comprehensive solutions designed to accelerate your business growth and digital transformation.</p>
+    </div>
+
+    <div class="services-grid">
+    
+        <!-- 1 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1581092160562-40aa08e78837.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>Solution Development</h3>
             </div>
-          </div>
-
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-
         </div>
-      </div>
-
-    </section><!-- End About Section -->
-
-    <!-- ======= Values Section ======= -->
-    <section id="values" class="values">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Our Values</h2>
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="box">
-              <img src="assets/img/values-1.png" class="img-fluid" alt="">
-              <h3>Web Development</h3>
-              <p>Through open-source software, our web applications are customized for the unique requirements of businesses.</p>
+    
+        <!-- 2 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1552664730-d307ca884978.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>Outsourcing</h3>
             </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="box">
-              <img src="assets/img/values-2.png" class="img-fluid" alt="">
-              <h3>Softwar Development</h3>
-              <p>We focus on the business problem and deliver the solution which not only serves business needs but helps it to grow rapidly.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-            <div class="box">
-              <img src="assets/img/values-3.png" class="img-fluid" alt="">
-              <h3>Mobile App Development.</h3>
-              <p>We build high-quality apps across native, web or hybrid platforms. Our apps are aimed at solving your business problems.</p>
-            </div>
-          </div>
-
         </div>
-
-      </div>
-
-    </section><!-- End Values Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="services" class="services">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Services</h2>
-          
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <img src="assets/img/features.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Solution Development</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Outsourcing</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Offshore</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Business Consulting</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>IoT Solutions</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Strategic Consulting</h3>
-                </div>
-              </div>
-
+    
+        <!-- 3 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1553877522-43269d4ea984.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>Software Consulting</h3>
             </div>
-          </div>
-
-        </div> <!-- / row -->
-
-
-
-       
-      </div>
-
-    </section><!-- End Features Section -->
-
-   
-
-
-    <!-- ======= F.A.Q Section ======= -->
-   
-
-   
+        </div>
+    
+        <!-- 4 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1609921212029-bb5a28e60960.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>UI / UX Design</h3>
+            </div>
+        </div>
+    
+        <!-- 5 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1519389950473-47ba0277781c.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>Cloud Solutions</h3>
+            </div>
+        </div>
+    
+        <!-- 6 -->
+        <div class="service-box">
+            <img src="assets/img/photo-1580894908361-967195033215.jpeg" alt="">
+            <div class="service-overlay">
+                <h3>Quality Assurance</h3>
+            </div>
+        </div>
+    
+    </div>
+    
+    </section>
     
 
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Our Clients</h2>
-        </header>
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/SkyWriter_logo.png" class="img-fluid" alt=""></div>
-<!--             <div class="swiper-slide"><img src="assets/img/clients/1631356569434.jpeg" class="img-fluid" alt=""></div> -->
-            <div class="swiper-slide"><img src="assets/img/clients/1631301335083.jfif" class="img-fluid" alt=""></div>
-<!--             <div class="swiper-slide"><img src="assets/img/clients/toffler-logo.svg" class="img-fluid" alt=""></div> -->
-            <div class="swiper-slide"><img src="assets/img/clients/logo_dash.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/313008442_447624467507003_7524599919150119447_n.jpg" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+  <!-- Clients Section -->
+  <div id="clients" class="clients-section  hidden">
+    <div class="section-header">
+      <span class="section-tag">Our Partners</span>
+      <h2><span class="highlight">Trusted</span> by Industry Leaders</h2>
+      <p>We've partnered with amazing companies to deliver exceptional results.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="client-logo">
+        <div class="swiper-slide"><img src="assets/img/clients/SkyWriter_logo.png" height="40px" class="img-fluid" alt=""></div>
       </div>
+      <div class="client-logo">
+        <div class="swiper-slide"><img src="assets/img/clients/1631301335083.jfif" height="100px" class="img-fluid" alt=""></div>
+      </div> 
+      <div class="client-logo">
+        <div class="swiper-slide"><img src="assets/img/clients/logo_dash.jpg" height="100px" class="img-fluid" alt=""></div>
+      </div>
+      <div class="client-logo">
+        <div class="swiper-slide"><img src="assets/img/clients/313008442_447624467507003_7524599919150119447_n.jpg" height="100px" class="img-fluid" alt=""></div>
+      </div>
+    </div>
+  </div>
 
-    </section><!-- End Clients Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <p>Contact Us</p>
-        </header>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
+  <!-- Contact Section -->
+  <section id="contact"  class="hidden">
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2>Let's Build Something <span class="highlight">Amazing</span></h2>
+      <p>Ready to transform your business? Contact us today for a consultation.</p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact <span class="gradient-text">Information</span></h3>
+        <p>Reach out to us through any of these channels. We're here to help bring your vision to life.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                  <h4>Our Office</h4>
                   <p>El Estad region, El Geish Street<br>Egypt</p>
-                </div>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
+          </div>
+          <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-text">
+                  <h4>Call Us</h4>
                   <p>+2 01098502270</p>
-                </div>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
+          </div>
+          <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div class="contact-item-text">
+                  <h4>Email</h4>
                   <p>info@smartinn-tech.com</p>
-                </div>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Saturday - Friday<br>9:00AM - 06:00PM</p>
-                </div>
-              </div>
-            </div>
-
           </div>
-
-          <div class="col-lg-6">
-            <form onsubmit="sendEmail(event)" class="php-email-form">
-              <div class="row gy-4">
-              
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  name="from_name"
-                  placeholder="Your Name"
-                  required
-                />  
+          <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div class="contact-item-text">
+                  <h4>Working Hours</h4>
+                  <p>Saturday - Friday<br>9:00 AM - 6:00 PM</p>
               </div>
-              
-              <div class="col-md-6 ">
-                <input
-                  type="email"
-                  name="reply_to"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-                
-              <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-                
-              <div class="col-md-12 text-center">
-                  
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-
           </div>
-
-        </div>
-
       </div>
-
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-  
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
-              <span>SmartInn</span>
-            </a>
-            <p>We build custom software for any device and platform.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/smartinn-tech" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
+      </div>
+      <div class="contact-form">
+        <form id="contact-form" onsubmit="sendEmail(event)">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required>
           </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required>
           </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+          <div class="form-group">
+            <input type="text" name="subject" placeholder="Subject" required>
           </div>
-
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>
-              El Estad region, El Geish Street <br>
-              <br>
-              Egypt <br><br>
-              <strong>Phone:</strong> +2 01098502270<br>
-              <strong>Email:</strong> info@smartinn-tech.com<br>
-            </p>
-
+          <div class="form-group">
+            <textarea name="message" placeholder="Message" required></textarea>
           </div>
-
-        </div>
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+          <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+        </form>
       </div>
     </div>
+  </section>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright 2026 <strong><span>SmartInn</span></strong>. All Rights Reserved
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>SmartInn</h3>
+        <p>We build custom software for any device and platform.</p>
+        <div class="social-links">
+          <a href="#" title="Twitter">𝕏</a>
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="https://www.linkedin.com/company/smartinn-tech" title="LinkedIn">in</a>
+        </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-
+      <div class="footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Product Management</a></li>
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>El Estad region, El Geish Street</li>
+          <li>Tanta 31511, Egypt</li>
+          <li><strong>Phone:</strong> +2 01098502270</li>
+          <li><strong>Email:</strong> info@smartinn.tech</li>
+        </ul>
       </div>
     </div>
-  </footer><!-- End Footer -->
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2025 <strong>SmartInn</strong>. All Rights Reserved</p>
+    </div>
+  </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -465,26 +1282,22 @@
       .catch(err => console.error(err));
   }
 </script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
   
+  document.querySelectorAll(".hidden").forEach(el => {
+    observer.observe(el);
+  });
+  </script>
+
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
