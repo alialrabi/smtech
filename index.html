@@ -6,6 +6,10 @@
   <title>SmartInn Technology</title>
   <meta name="description" content="Modern software solutions that help businesses grow">
   <meta name="keywords" content="software development, web development, mobile apps, Egypt">
+  
+  <!-- Preconnect to optimize loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <style>
     * {
       margin: 0;
@@ -40,10 +44,6 @@
 
 
 
-
-
-
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
@@ -64,10 +64,9 @@
     }
 
     nav {
-      max-width: 1290px;
       margin: 0 auto;
       height: 70px;
-      padding: 1rem 0;
+      padding: 1rem 2%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -130,7 +129,6 @@
     position: relative;
     top: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 60px 0px;
     background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
@@ -138,21 +136,21 @@
 }
 
 .hero-container {
-    max-width: 1290px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    padding: 0% 2%;
 }
 
 /* TEXT */
 
 .hero-text h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
             color: var(--text-dark);
         }
 
@@ -225,7 +223,7 @@
     .btn-primary {
       background: white;
       color: #B30000;
-      padding: 1rem 2rem;
+      padding: 5px 20px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -247,7 +245,7 @@
       height: 60px;
       background: white;
       color: #B30000;
-      padding: 1rem 2rem;
+      padding: 18px 20px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -267,8 +265,7 @@
 
     /* Section Styles */
     section {
-      padding: 80px 2rem;
-      margin: 0 auto;
+      padding: 80px 0;
     }
 
     .values {
@@ -278,6 +275,7 @@
     .section-header {
       text-align: center;
       margin-bottom: 4rem;
+      padding: 0 2%;
     }
 
     .section-header h2 {
@@ -297,6 +295,7 @@
     /* About Section */
     .about-content {
       display: grid;
+      padding: 0 2%;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
@@ -412,6 +411,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+      padding: 0 2%;
     }
 
     .value-card {
@@ -454,8 +454,8 @@
 
     /* Services Section */
 .services {
-  padding: 80px auto;
-  background: white; /* Add this to ensure white background */
+  padding: 80px 2%;
+  background: white;
 }
 
 .services h2 {
@@ -471,7 +471,7 @@
   gap: 25px;
 }
 
-/* Service Box */
+/* Service Box - مع تحسينات الأداء */
 .service-box {
   position: relative;
   height: 200px;
@@ -481,14 +481,73 @@
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* إضافة background placeholder */
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
 }
 
 .service-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1s ease;
+  transition: transform 1s ease, opacity 0.3s ease;
+  /* إخفاء الصورة قبل التحميل */
+  opacity: 0;
 }
+
+/* عرض الصورة بعد التحميل */
+.service-box img.loaded {
+  opacity: 1;
+}
+
+.client-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    .client-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+.client-card:hover .client-logo {
+      border-color: var(--primary);
+    }
+
+.client-card:hover .client-logo img {
+      filter: grayscale(0%);
+    }
+
+    .client-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .client-card p {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      line-height: 1.5;
+    }
+
+.client-card {
+        padding: 1.5rem;
+      }
+      
+      .client-card h4 {
+        font-size: 1rem;
+      }
+      
+      .client-card p {
+        font-size: 0.85rem;
+      }
 
 .service-overlay {
   position: absolute;
@@ -497,6 +556,7 @@
   display: flex;
   align-items: center;
   padding: 30px;
+  z-index: 1;
 }
 
 .service-overlay h3 {
@@ -527,7 +587,7 @@
     /* Clients Section */
     .clients-section {
       background: linear-gradient(135deg, #FFF5F7 0%, #F0F8FF 100%);
-      padding: 80px 2rem;
+      padding: 80px 2%;
     }
 
     .clients-grid {
@@ -535,7 +595,6 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       align-items: center;
-      max-width: 1280px;
       margin: 0 auto;
     }
 
@@ -569,11 +628,18 @@
     }
 
     .contact-container {
-            max-width: 1290px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
+            padding: 0 2%;
+        }
+        
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
     /* Contact Section */
@@ -837,6 +903,39 @@
       .footer-content {
         grid-template-columns: 1fr;
       }
+      
+      /* Contact form responsive */
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 5%;
+      }
+      
+      .contact-info h3 {
+        font-size: 2rem;
+      }
+      
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+      
+      .contact-item {
+        padding: 1rem;
+      }
+      
+      .contact-item-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+      }
+      
+      .contact-item-text h4 {
+        font-size: 1rem;
+      }
+      
+      .contact-item-text p {
+        font-size: 0.9rem;
+      }
     }
 
     @media (max-width: 640px) {
@@ -850,6 +949,66 @@
 
       .hero-buttons {
         flex-direction: column;
+      }
+      
+      /* Contact form for small mobile */
+      
+      
+      .contact-container {
+        padding: 0;
+        gap: 2rem;
+      }
+      
+      .contact-info h3 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-info p {
+        font-size: 1rem;
+      }
+      
+      .contact-form {
+        padding: 1.5rem 1rem;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+      }
+      
+      .form-group textarea {
+        min-height: 120px;
+      }
+      
+      .cta-button {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+      }
+      
+      .contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0.9rem;
+      }
+      
+      .contact-item-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .section-header p {
+        font-size: 1rem;
+      }
+      
+      .section-tag {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.5rem;
       }
     }
 
@@ -987,7 +1146,7 @@
   
           <!-- TEXT -->
           <div class="hero-text">
-              <div class="hero-text wave">
+              <div class="wave">
                 <h1>Transform Your Business with <span class="gradient-text">Smart Technology</span></h1>
                 <p>We are a software development company focused on designing, building, and delivering scalable digital products aligned with your business goals.</p>
             </div>
@@ -1002,7 +1161,7 @@
           <div class="hero-image wave">
   
               <!-- Replace src with your image path -->
-              <img src="assets/img/smart.jpg" alt="Team Working">
+              <img src="assets/img/smart.jpg" alt="Team Working" loading="lazy">
   
           </div>
   
@@ -1018,7 +1177,7 @@
         <p>That provides high quality IT services such as IT consulting, Web development and Business Applications at effective cost around the world. SmartInn offers you dedicated services at all stages of the project. We strongly believe in increasing our clients business output through the application of the latest technical tools in most effective and creative ways.</p>
       </div>
       <div class="hero-image">
-        <img src="assets/img/smart2.jpg" alt="Team Working">
+        <img src="assets/img/smart2.jpg" alt="Team Working" loading="lazy">
       </div>
     </div>
   </section>
@@ -1061,7 +1220,9 @@
     
         <!-- 1 -->
         <div class="service-box">
-            <img src="assets/img/photo-1581092160562-40aa08e78837.jpeg" alt="">
+            <img src="assets/img/photo-1581092160562-40aa08e78837.jpeg" 
+                 alt="Solution Development" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>Solution Development</h3>
             </div>
@@ -1069,7 +1230,9 @@
     
         <!-- 2 -->
         <div class="service-box">
-            <img src="assets/img/photo-1552664730-d307ca884978.jpeg" alt="">
+            <img src="assets/img/photo-1552664730-d307ca884978.jpeg" 
+                 alt="Outsourcing" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>Outsourcing</h3>
             </div>
@@ -1077,7 +1240,9 @@
     
         <!-- 3 -->
         <div class="service-box">
-            <img src="assets/img/photo-1553877522-43269d4ea984.jpeg" alt="">
+            <img src="assets/img/photo-1553877522-43269d4ea984.jpeg" 
+                 alt="Software Consulting" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>Software Consulting</h3>
             </div>
@@ -1085,7 +1250,9 @@
     
         <!-- 4 -->
         <div class="service-box">
-            <img src="assets/img/photo-1609921212029-bb5a28e60960.jpeg" alt="">
+            <img src="assets/img/photo-1609921212029-bb5a28e60960.jpeg" 
+                 alt="UI UX Design" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>UI / UX Design</h3>
             </div>
@@ -1093,7 +1260,9 @@
     
         <!-- 5 -->
         <div class="service-box">
-            <img src="assets/img/photo-1519389950473-47ba0277781c.jpeg" alt="">
+            <img src="assets/img/photo-1519389950473-47ba0277781c.jpeg" 
+                 alt="Cloud Solutions" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>Cloud Solutions</h3>
             </div>
@@ -1101,7 +1270,9 @@
     
         <!-- 6 -->
         <div class="service-box">
-            <img src="assets/img/photo-1580894908361-967195033215.jpeg" alt="">
+            <img src="assets/img/photo-1580894908361-967195033215.jpeg" 
+                 alt="Quality Assurance" 
+                 loading="lazy">
             <div class="service-overlay">
                 <h3>Quality Assurance</h3>
             </div>
@@ -1120,21 +1291,38 @@
       <p>We've partnered with amazing companies to deliver exceptional results.</p>
     </div>
     <div class="clients-grid">
-      <div class="client-logo">
-        <div class="swiper-slide"><img src="assets/img/clients/SkyWriter_logo.png" height="40px" class="img-fluid" alt=""></div>
-      </div>
-      <div class="client-logo">
-        <div class="swiper-slide"><img src="assets/img/clients/1631301335083.jfif" height="100px" class="img-fluid" alt=""></div>
+      <div class="client-card">
+        <div class="client-logo">
+          <img src="assets/img/clients/1631301335083.jfif" height="100px" class="img-fluid" alt="Client 2" loading="lazy">
+        </div>
+        <h4>Tech Solutions</h4>
+        <p>Enterprise software solutions</p>
       </div> 
-      <div class="client-logo">
-        <div class="swiper-slide"><img src="assets/img/clients/logo_dash.jpg" height="100px" class="img-fluid" alt=""></div>
+      <div class="client-card">
+        <div class="client-logo">
+          <img src="assets/img/clients/logo_dash.jpg" height="100px" class="img-fluid" alt="Dash" loading="lazy">
+        </div>
+        <h4>Dash Analytics</h4>
+        <p>Business intelligence platform</p>
       </div>
-      <div class="client-logo">
-        <div class="swiper-slide"><img src="assets/img/clients/313008442_447624467507003_7524599919150119447_n.jpg" height="100px" class="img-fluid" alt=""></div>
+      <div class="client-card">
+        <div class="client-logo">
+          <img src="assets/img/clients/SkyWriter_logo.png" height="40px" class="img-fluid" alt="SkyWriter" loading="lazy">
+        </div>
+        <h4>SkyWriter</h4>
+        <p>Leading content creation platform</p>
+      </div>
+      <div class="client-card">
+        <div class="client-logo">
+          <img src="assets/img/clients/313008442_447624467507003_7524599919150119447_n.jpg" height="100px" class="img-fluid" alt="Client 4" loading="lazy">
+        </div>
+        <h4>Innovation Hub</h4>
+        <p>Digital transformation partner</p>
       </div>
     </div>
   </div>
 
+  
   <!-- Contact Section -->
   <section id="contact"  class="hidden">
     <div class="section-header">
@@ -1298,7 +1486,24 @@
   document.querySelectorAll(".hidden").forEach(el => {
     observer.observe(el);
   });
-  </script>
+</script>
+
+<!-- Script لإضافة class loaded للصور بعد التحميل -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.service-box img');
+    
+    images.forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function() {
+          this.classList.add('loaded');
+        });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
